@@ -1,0 +1,204 @@
+
+/*
+	Fireside Family Inspections — Basic Theme
+	Palette (from colors.txt):
+		brown: #3B271B
+		orange: #E27222
+		yellow: #F3A917
+		gold: #B7A07D
+		dark gray: #797976
+		mid gray: #999796
+		light gray: #ECECEC
+
+	Notes: Variables are defined for easy reuse. This stylesheet creates a neutral layout
+	with accessible buttons, forms, and small components to help build pages.
+*/
+
+/* Color variables */
+:root {
+	--brown: #3B271B;
+	--orange: #E27222;
+	--yellow: #F3A917;
+	--gold: #B7A07D;
+	--dark-gray: #797976;
+	--mid-gray: #999796;
+	--light-gray: #ECECEC;
+
+	/* Semantic colors */
+	--bg: var(--light-gray);
+	--surface: #FFFFFF;
+	--text: var(--brown);
+	--muted: var(--mid-gray);
+	--accent: var(--orange);
+	--accent-2: var(--yellow);
+	--success: #4BB543; /* small accent for calls to action */
+	--radius: 8px;
+}
+
+/* Reset / base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	font-size: 16px;
+	line-height: 1.4;
+	color: var(--text);
+	background: linear-gradient(180deg, var(--bg), #F8F8F8);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Layout */
+.container {
+	max-width: 1100px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+}
+
+.card {
+	background: var(--surface);
+	border-radius: var(--radius);
+	box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+	border: 1px solid rgba(0,0,0,0.04);
+	padding: 1.25rem;
+}
+
+/* Header */
+.site-header {
+	background: linear-gradient(90deg, rgba(59,39,27,0.95) 0%, rgba(226,114,34,0.95) 100%);
+	color: #fff;
+	padding: 1rem 0;
+}
+.site-header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.site-title {
+	margin: 0;
+	font-size: 1.25rem;
+	letter-spacing: 0.02em;
+	color: #fff;
+}
+.site-title small { color: rgba(255,255,255,0.85); font-weight: 400; }
+
+/* Navigation */
+.nav {
+	display: flex;
+	gap: 1rem;
+}
+.nav a {
+	color: rgba(255,255,255,0.95);
+	text-decoration: none;
+	padding: 0.5rem 0.75rem;
+	border-radius: 6px;
+}
+.nav a:hover { background: rgba(255,255,255,0.06); }
+
+/* Typography */
+h1, h2, h3, h4 { color: var(--brown); margin: 0 0 0.5rem 0; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+p { margin: 0 0 1rem 0; color: var(--dark-gray); }
+
+/* Buttons */
+.btn {
+	font-weight: 600;
+	display: inline-flex;
+	gap: .5rem;
+	align-items: center;
+	justify-content: center;
+	padding: 0.6rem 1rem;
+	border-radius: 999px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+	background: var(--accent);
+	color: #fff;
+	box-shadow: 0 6px 18px rgba(226,114,34,0.15);
+}
+.btn-primary:hover { filter: brightness(0.96); }
+
+.btn-secondary {
+	background: var(--gold);
+	color: var(--brown);
+}
+
+.btn-outline {
+	background: transparent;
+	border: 1px solid var(--brown);
+	color: var(--brown);
+}
+
+/* Forms */
+input, textarea, select { font: inherit; color: var(--brown); }
+label { display: block; margin-bottom: 0.35rem; color: var(--dark-gray); }
+.form-group { margin-bottom: 1rem; }
+input[type="text"], input[type="email"], textarea, select {
+	padding: 0.6rem 0.75rem;
+	border-radius: 6px;
+	border: 1px solid rgba(0,0,0,0.08);
+	background: #fff;
+	width: 100%;
+	outline: none;
+}
+input:focus, textarea:focus {
+	box-shadow: 0 0 0 4px rgba(226,114,34,0.12);
+	border-color: var(--accent);
+}
+
+/* Cards & Sections */
+.hero {
+	background: linear-gradient(135deg, rgba(59,39,27,0.06) 0%, rgba(183,160,125,0.06) 100%);
+	padding: 3rem 1rem;
+	border-radius: 12px;
+}
+
+.muted { color: var(--muted); }
+.text-accent { color: var(--accent); }
+.text-gold { color: var(--gold); }
+
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; }
+.col-6 { grid-column: span 6; }
+.col-4 { grid-column: span 4; }
+.col-12 { grid-column: span 12; }
+
+/* Footer */
+.site-footer {
+	background: var(--dark-gray);
+	color: #fff;
+	padding: 1.25rem 0;
+	margin-top: 2rem;
+}
+.site-footer a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+
+/* Utilities */
+.center { text-align: center; }
+.lead { font-size: 1.125rem; color: var(--dark-gray); }
+.badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 999px; background: var(--gold); color: var(--brown); font-weight: 600; }
+
+/* Responsive */
+@media (max-width: 800px) {
+	h1 { font-size: 1.5rem; }
+	.grid { grid-template-columns: repeat(6, 1fr); }
+	.col-6 { grid-column: span 6; }
+}
+
+@media (max-width: 420px) {
+	.site-header .container { flex-direction: column; gap: 0.5rem; }
+}
+
+/* Accessibility improvements */
+a { color: var(--accent); }
+a:focus { outline: 3px dashed rgba(226,114,34,0.24); outline-offset: 2px; }
+
+/* Small helpers */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* End of theme */

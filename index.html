@@ -3,9 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Fireside Family Inspections</title>
+    <meta name="description" content="Professional home inspections by certified inspectors — thorough, friendly, and affordable.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Enable smooth scrolling for anchor links */
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div style="display:flex; align-items:center; gap:1rem;">
+                <h1 class="site-title">Fireside Family Inspections <small>Safe, Fair & Friendly</small></h1>
+            </div>
+            <nav class="nav" role="navigation" aria-label="Main Navigation">
+                <a href="#services">Services</a>
+                <a href="#inspectors">Inspectors</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container hero" aria-labelledby="hero-title">
+            <div class="card">
+                <h2 id="hero-title">Professional Home Inspections with a Personal Touch</h2>
+                <p class="lead">Comprehensive inspections and honest recommendations to help you feel secure in your home purchase or sale.</p>
+                <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1rem;">
+                    <a class="btn btn-primary" href="#contact">Request an Inspection</a>
+                    <a class="btn btn-outline" href="#services">View Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container" aria-labelledby="services-title">
+            <div class="card">
+                <h2 id="services-title">Our Services</h2>
+                <p>We offer full home inspections, pre-listing inspections, re-inspections, and radon testing. Our reports are clear, photo-backed, and easy to follow.</p>
+                <div class="grid" style="margin-top:1rem;">
+                    <div class="col-6 card">
+                        <h3>Full Home Inspection</h3>
+                        <p class="muted">A thorough start-to-finish home inspection that covers major systems and structures.</p>
+                    </div>
+                    <div class="col-6 card">
+                        <h3>Radon & Environmental Testing</h3>
+                        <p class="muted">Optional testing for radon, mold, and other environmental concerns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inspectors" class="container" aria-labelledby="inspectors-title">
+            <h2 id="inspectors-title">Meet Our Inspectors</h2>
+            <div class="grid" style="margin-top:1rem;">
+                <div class="col-6 card" role="region" aria-labelledby="inspector-1-name">
+                    <img src="https://via.placeholder.com/900x500?text=Inspector+1" alt="Inspector 1 portrait" style="width:100%; border-radius:8px; object-fit:cover;">
+                    <h3 id="inspector-1-name">Inspector One</h3>
+                    <p class="muted">Licensed Home Inspector — 10+ years experience. Placeholder biography and credentials here.</p>
+                    <p><strong>Certifications:</strong> Placeholder certification list</p>
+                </div>
+                <div class="col-6 card" role="region" aria-labelledby="inspector-2-name">
+                    <img src="https://via.placeholder.com/900x500?text=Inspector+2" alt="Inspector 2 portrait" style="width:100%; border-radius:8px; object-fit:cover;">
+                    <h3 id="inspector-2-name">Inspector Two</h3>
+                    <p class="muted">Licensed Home Inspector — experienced in residential & commercial inspections. Placeholder biography here.</p>
+                    <p><strong>Specialties:</strong> Placeholder specialization list</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container" aria-labelledby="contact-title">
+            <div class="card">
+                <h2 id="contact-title">Contact Us</h2>
+                <p class="muted">Prefer phone or email? Use the contact info below, or submit a quick message and we'll get back to you.</p>
+
+                <div class="grid" style="margin-top:1rem; gap:2rem;">
+                    <div class="col-6">
+                        <h3>Contact Info</h3>
+                        <p><strong>Phone:</strong> (555) 555-0123</p>
+                        <p><strong>Email:</strong> contact@example.com</p>
+                        <p><strong>Address:</strong> 123 Main St, Anytown, USA</p>
+                        <div style="margin-top:1rem;">
+                            <a class="btn btn-primary" href="tel:+15555550123">Call Us</a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3>Request an Inspection</h3>
+                        <form action="#" method="post" aria-label="Request an inspection form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" placeholder="you@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input id="phone" name="phone" type="text" placeholder="(555) 555-0123">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Tell us about the property and timeframe..." ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Submit Request</button>
+                                <button type="reset" class="btn btn-outline">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container center">
+            <p>&copy; <span id="year"></span> Fireside Family Inspections — All rights reserved.</p>
+            <p class="muted">Placeholder license and business info. Insurance and certifications listed here.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to set current year and ensure the top CTA smoothly scrolls on older browsers
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

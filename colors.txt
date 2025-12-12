@@ -1,0 +1,7 @@
+brown: #3B271B
+orange: #E27222
+yellow: #F3A917
+gold: #B7A07D
+dark gray: #797976
+mid gray: #999796
+light gray: #ECECEC
