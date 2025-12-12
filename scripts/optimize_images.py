@@ -4,11 +4,16 @@ from pathlib import Path
 
 images_dir = Path(__file__).resolve().parents[1] / 'images'
 images = {
-    'fireside-logo.png': {'web': ('fireside-logo-web.png', {'width': 360}), 'header': ('fireside-logo-header.png', {'height': 44}), 'favicon': ('favicon.png', {'size': (32, 32)})},
-    'ccpia-logo.png': {'web': ('ccpia-badge.png', {'height': 72})},
-    'nachi-logo.png': {'web': ('nachi-badge.png', {'height': 72})},
-    '91-low-resolution-for-web-png-1546033375.png': {'web': ('derek-badge.png', {'height': 72})},
-    '97-low-resolution-for-web-png-1546035861.png': {'web': ('josiah-badge.png', {'height': 72})}
+    'fireside-logo-hires.png': {
+        'web': ('fireside-logo-hires-web.png', {'width': 1200}),
+        'header': ('fireside-logo-header.png', {'height': 96}),
+        'header2x': ('fireside-logo-header@2x.png', {'height': 192}),
+        'favicon': ('favicon.png', {'size': (32, 32)})
+    },
+    'ccpia-badge.png': {'web': ('ccpia-badge-web.png', {'height': 1200}), 'web2x': ('ccpia-badge@2x.png', {'height': 2400})},
+    'nachi-badge.png': {'web': ('nachi-badge-web.png', {'height': 1200}), 'web2x': ('nachi-badge@2x.png', {'height': 2400})},
+    'cpi-badge.png': {'web': ('cpi-badge-web.png', {'height': 1200}), 'web2x': ('cpi-badge@2x.png', {'height': 2400})},
+    'sewer-badge.png': {'web': ('sewer-badge-web.png', {'height': 1200}), 'web2x': ('sewer-badge@2x.png', {'height': 2400})}
 }
 
 # For images not listed in the images map, create a web-optimized PNG and a webp variant.
@@ -32,6 +37,32 @@ def optimize_misc_images(images_dir):
                 img.save(webp_dst, 'WEBP', quality=80, method=6)
             except Exception as e:
                 print('Failed to create webp for misc', e)
+
+
+def create_2x_variants(images_dir, targets):
+    """Create @2x PNG/WebP variants for existing image files named in targets.
+    If the file exists, create <name>@2x.png and <name>@2x.webp scaled to double height.
+    """
+    for name in targets:
+        src = images_dir / name
+        if not src.exists():
+            print(f"Skipping for 2x: missing source {name}")
+            continue
+        try:
+            img = Image.open(src)
+            w, h = img.size
+            # target 2x scale is height * 2
+            new_h = int(h * 2)
+            new_w = int(w * 2)
+            img2x = img.copy().resize((new_w, new_h), Image.LANCZOS)
+            dst2x = src.with_name(src.stem + '@2x' + src.suffix)
+            img2x.save(dst2x, optimize=True, quality=85)
+            # also save webp
+            webp_dst = dst2x.with_suffix('.webp')
+            img2x.save(webp_dst, 'WEBP', quality=85, method=6)
+            print(f"Created 2x variant for {name} -> {dst2x.name}")
+        except Exception as e:
+            print(f"Failed creating 2x for {name}: {e}")
 
 
 def resize_image(src_path, dst_path, width=None, height=None, size=None):
@@ -87,6 +118,15 @@ if __name__ == '__main__':
             resize_image(src_path, dst_path, width=width, height=height, size=size)
     # Optimize other image files as well
     optimize_misc_images(images_dir)
+    # Create @2x variants for logo and badges if we only have low-res images
+    create_2x_variants(images_dir, [
+        'fireside-logo-hires-web.png',
+        'ccpia-badge.png',
+        'nachi-badge.png',
+        'cpi-badge.png',
+        'sewer-badge.png',
+        'favicon.png'
+    ])
     # Create favicon.ico from favicon.png variants
     try:
         favicon_png = images_dir / 'favicon.png'

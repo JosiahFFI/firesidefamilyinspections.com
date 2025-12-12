@@ -95,7 +95,7 @@ body {
 .site-title small { color: rgba(255,255,255,0.85); font-weight: 400; }
 
 /* Logo / branding */
-.site-branding img { height: 44px; width: auto; max-width: 240px; display: block; }
+.site-branding img { height: 72px; width: auto; max-width: 360px; display: block; }
 .site-header .site-branding { display: flex; align-items: center; gap: .75rem; }
 
 /* Navigation */
@@ -176,7 +176,7 @@ input:focus, textarea:focus {
 }
 
 /* Certification logos placed under inspector profile */
-.cert-logos img { height: 36px; width: auto; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); }
+.cert-logos img { height: 72px; width: auto; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); }
 .cert-logos { display:flex; align-items:center; gap: .5rem; flex-wrap: wrap; }
 
 .muted { color: var(--muted); }
@@ -222,6 +222,10 @@ input:focus, textarea:focus {
 		.site-header .brand-and-toggle { width: 100%; }
 		.nav { right: 0; left: 0; border-radius: 0; }
 		.cert-logos { flex-wrap: wrap; gap: 0.5rem; }
+		/* slightly reduce cert icons on very small screens for layout */
+		.cert-logos img { height: 40px; }
+		/* slightly reduce header logo on very small screens */
+		.site-branding img { height: 48px; }
 		.btn { width: 100%; }
 }
 
@@ -234,10 +238,13 @@ input:focus, textarea:focus {
 
 /* Desktop header scale-up */
 @media (min-width: 1100px) {
-	.site-branding img { height: 72px; }
+	.site-branding img { height: 128px; }
 	.site-title { font-size: 1.6rem; }
 	.hero { padding: 4rem 1.5rem; }
 	.hero h2 { font-size: 2.4rem; }
+
+	/* boost cert logos on large screens for improved clarity */
+	.cert-logos img { height: 96px; }
 }
 
 /* Accessibility improvements */
