@@ -5,27 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fireside Family Inspections</title>
     <meta name="description" content="Professional home inspections by certified inspectors — thorough, friendly, and affordable.">
+    <link rel="canonical" href="https://firesidefamilyinspections.com/">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#3B271B">
+    <!-- Open Graph / social -->
+    <meta property="og:title" content="Fireside Family Inspections">
+    <meta property="og:description" content="Professional home inspections by certified inspectors — thorough, friendly, and affordable.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://firesidefamilyinspections.com/">
+    <meta property="og:image" content="https://firesidefamilyinspections.com/images/fireside-logo-header.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fireside Family Inspections">
+    <meta name="twitter:description" content="Professional home inspections by certified inspectors — thorough, friendly, and affordable.">
+    <meta name="twitter:image" content="https://firesidefamilyinspections.com/images/fireside-logo-header.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+        <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="images/fireside-logo-header.png">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "HomeAndConstructionBusiness",
+            "name": "Fireside Family Inspections",
+            "url": "https://firesidefamilyinspections.com/",
+            "telephone": "+1-509-242-6280",
+            "email": "derekt@firesidefamilyinspections.com",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "14016 W. Tepee Rd",
+                "addressLocality": "Spokane",
+                "addressRegion": "WA",
+                "postalCode": "99224",
+                "addressCountry": "US"
+            },
+            "logo": "https://firesidefamilyinspections.com/images/fireside-logo-header.png",
+            "sameAs": []
+        }
+        </script>
     <style>
         /* Enable smooth scrolling for anchor links */
         html { scroll-behavior: smooth; }
     </style>
 </head>
 <body>
-    <header class="site-header" role="banner">
-        <div class="container">
-            <div style="display:flex; align-items:center; gap:1rem;">
-                <h1 class="site-title">Fireside Family Inspections <small>Safe, Fair & Friendly</small></h1>
+    <a class="skip-link sr-only" href="#main">Skip to content</a>
+        <header class="site-header" role="banner">
+            <div class="container">
+                <div class="brand-and-toggle" style="display:flex; align-items:center; gap:1rem;">
+                        <div class="site-branding" style="display:flex; align-items:center; gap:0.75rem;">
+                        <picture>
+                            <source type="image/webp" srcset="images/fireside-logo-header.webp">
+                            <img src="images/fireside-logo-header.png" alt="Fireside Family Inspections logo">
+                        </picture>
+                        <h1 class="site-title">Fireside Family Inspections</h1>
+                    </div>
+                    <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="main-nav">☰</button>
+                </div>
+                <nav id="main-nav" class="nav" role="navigation" aria-label="Main Navigation">
+                    <a href="#services">Services</a>
+                    <a href="#inspectors">Inspectors</a>
+                    <a href="#contact">Contact</a>
+                </nav>
             </div>
-            <nav class="nav" role="navigation" aria-label="Main Navigation">
-                <a href="#services">Services</a>
-                <a href="#inspectors">Inspectors</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
+        </header>
 
-    <main>
+    <main id="main" role="main">
         <section class="container hero" aria-labelledby="hero-title">
             <div class="card">
                 <h2 id="hero-title">Professional Home Inspections with a Personal Touch</h2>
@@ -40,15 +85,28 @@
         <section id="services" class="container" aria-labelledby="services-title">
             <div class="card">
                 <h2 id="services-title">Our Services</h2>
-                <p>We offer full home inspections, pre-listing inspections, re-inspections, and radon testing. Our reports are clear, photo-backed, and easy to follow.</p>
+                <p>We offer full home inspections, pre-listing inspections, re-inspections, and radon testing, among other services. Our reports are clear, photo-backed, and easy to follow.</p>
+
                 <div class="grid" style="margin-top:1rem;">
                     <div class="col-6 card">
                         <h3>Full Home Inspection</h3>
                         <p class="muted">A thorough start-to-finish home inspection that covers major systems and structures.</p>
                     </div>
                     <div class="col-6 card">
-                        <h3>Radon & Environmental Testing</h3>
-                        <p class="muted">Optional testing for radon, mold, and other environmental concerns.</p>
+                        <h3>Team Inspections</h3>
+                        <p class="muted">Have both inspectors working at once to provide you a faster inspection process without losing report quality.</p>
+                    </div>
+                    <div class="col-6 card">
+                        <h3>Radon & Water Testing</h3>
+                        <p class="muted">Optional testing for radon and water quality.</p>
+                    </div>
+                    <div class="col-6 card">
+                        <h3>Sewer Inspections</h3>
+                        <p class="muted">A sewer-scope inspection to ensure the integrity of the sewer lines.</p>
+                    </div>
+                    <div class="col-6 card">
+                        <h3>Commercial Inspections</h3>
+                        <p class="muted">Small-scale commercial inspections, such as strip malls or office buildings.</p>
                     </div>
                 </div>
             </div>
@@ -58,16 +116,36 @@
             <h2 id="inspectors-title">Meet Our Inspectors</h2>
             <div class="grid" style="margin-top:1rem;">
                 <div class="col-6 card" role="region" aria-labelledby="inspector-1-name">
-                    <img src="https://via.placeholder.com/900x500?text=Inspector+1" alt="Inspector 1 portrait" style="width:100%; border-radius:8px; object-fit:cover;">
-                    <h3 id="inspector-1-name">Inspector One</h3>
-                    <p class="muted">Licensed Home Inspector — 10+ years experience. Placeholder biography and credentials here.</p>
-                    <p><strong>Certifications:</strong> Placeholder certification list</p>
+                    <h3 id="inspector-1-name">Derek Torgerson</h3>
+                    <p><strong>WA License:</strong> #25033369</p>
+                    <p><strong>InterNACHI:</strong> InterNACHI© Certified Professional Inspector© - NACHI25070147</p>
+                    <p><strong>CCPIA:</strong> CCPIA-Certified Commercial Property Inspector - CCPIA-004481</p>
+                    <p><strong>Email:</strong> <a href="mailto:derekt@firesidefamilyinspections.com">derekt@firesidefamilyinspections.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+15092426280">509-242-6280</a></p>
+                                        <div class="cert-logos" style="margin-top:0.75rem; display:flex; gap:0.5rem; align-items:center;">
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/ccpia-badge.webp">
+                                                    <img src="images/ccpia-badge.png" alt="CCPIA Certification logo">
+                                                </picture>
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/nachi-badge.webp">
+                                                    <img src="images/nachi-badge.png" alt="NACHI Certification logo">
+                                                </picture>
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/derek-badge.webp">
+                                                    <img src="images/derek-badge.png" alt="Derek photo (badge)">
+                                                </picture>
+                                                <picture>
+                                                    <source type="image/webp" srcset="images/josiah-badge.webp">
+                                                    <img src="images/josiah-badge.png" alt="Josiah photo (badge)">
+                                                </picture>
+                                        </div>
                 </div>
                 <div class="col-6 card" role="region" aria-labelledby="inspector-2-name">
-                    <img src="https://via.placeholder.com/900x500?text=Inspector+2" alt="Inspector 2 portrait" style="width:100%; border-radius:8px; object-fit:cover;">
-                    <h3 id="inspector-2-name">Inspector Two</h3>
-                    <p class="muted">Licensed Home Inspector — experienced in residential & commercial inspections. Placeholder biography here.</p>
-                    <p><strong>Specialties:</strong> Placeholder specialization list</p>
+                    <h3 id="inspector-2-name">Josiah Torgerson</h3>
+                    <p><strong>Email:</strong> <a href="mailto:josiah@firesidefamilyinspections.com">josiah@firesidefamilyinspections.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+15092426279">509-242-6279</a></p>
+                    <p><strong>WA License:</strong> #25035573</p>
                 </div>
             </div>
         </section>
@@ -75,42 +153,20 @@
         <section id="contact" class="container" aria-labelledby="contact-title">
             <div class="card">
                 <h2 id="contact-title">Contact Us</h2>
-                <p class="muted">Prefer phone or email? Use the contact info below, or submit a quick message and we'll get back to you.</p>
+                <p class="muted">Prefer phone or email? Use the contact info below, and we'll get back to you.</p>
 
                 <div class="grid" style="margin-top:1rem; gap:2rem;">
                     <div class="col-6">
                         <h3>Contact Info</h3>
-                        <p><strong>Phone:</strong> (555) 555-0123</p>
-                        <p><strong>Email:</strong> contact@example.com</p>
-                        <p><strong>Address:</strong> 123 Main St, Anytown, USA</p>
+                        <p><strong>Phone:</strong> 509-242-6280</p>
+                        <p><strong>Email:</strong> <a href="mailto:derekt@firesidefamilyinspections.com">derekt@firesidefamilyinspections.com</a></p>
                         <div style="margin-top:1rem;">
-                            <a class="btn btn-primary" href="tel:+15555550123">Call Us</a>
+                            <a class="btn btn-primary" href="tel:+15092426280">Call Us</a>
                         </div>
                     </div>
                     <div class="col-6">
-                        <h3>Request an Inspection</h3>
-                        <form action="#" method="post" aria-label="Request an inspection form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input id="name" name="name" type="text" placeholder="Your name">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input id="email" name="email" type="email" placeholder="you@example.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input id="phone" name="phone" type="text" placeholder="(555) 555-0123">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Tell us about the property and timeframe..." ></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit Request</button>
-                                <button type="reset" class="btn btn-outline">Reset</button>
-                            </div>
-                        </form>
+                        <h3>How to Request an Inspection</h3>
+                        <p>Please call or email to request an inspection — we’ll schedule a time and gather property details by phone.</p>
                     </div>
                 </div>
             </div>
@@ -119,14 +175,51 @@
 
     <footer class="site-footer">
         <div class="container center">
-            <p>&copy; <span id="year"></span> Fireside Family Inspections — All rights reserved.</p>
-            <p class="muted">Placeholder license and business info. Insurance and certifications listed here.</p>
+            <!-- <p>&copy; <span id="year"></span> Fireside Family Inspections — All rights reserved.</p>
+            <p class="muted">Placeholder license and business info. Insurance and certifications listed here.</p> -->
         </div>
     </footer>
 
     <script>
         // Simple script to set current year and ensure the top CTA smoothly scrolls on older browsers
         document.getElementById('year').textContent = new Date().getFullYear();
+        // Add keyboard focus outline to visible areas
+        document.querySelectorAll('a, button, .btn').forEach(el => {
+            el.addEventListener('focus', function () {
+                this.classList.add('keyboard-focus');
+            });
+            el.addEventListener('blur', function () {
+                this.classList.remove('keyboard-focus');
+            });
+        });
+        // Mobile navigation toggle
+        (function () {
+            const btn = document.querySelector('.nav-toggle');
+            const nav = document.getElementById('main-nav');
+            if (!btn || !nav) return;
+            btn.addEventListener('click', function (e) {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+                nav.classList.toggle('open');
+            });
+            // Close nav on escape
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    nav.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+            // highlight active nav link
+            const links = nav.querySelectorAll('a');
+            links.forEach(l => {
+                l.addEventListener('click', function () {
+                    links.forEach(x => x.removeAttribute('aria-current'));
+                    this.setAttribute('aria-current', 'true');
+                    nav.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
     </script>
 </body>
 </html>

@@ -75,6 +75,17 @@ body {
 	align-items: center;
 	justify-content: space-between;
 }
+.site-header .brand-and-toggle { display:flex; align-items:center; gap:1rem; width: 100%; }
+
+.nav-toggle {
+	display: none;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.12);
+	color: #fff;
+	padding: 0.35rem 0.5rem;
+	border-radius: 6px;
+}
+
 .site-title {
 	margin: 0;
 	font-size: 1.25rem;
@@ -82,6 +93,10 @@ body {
 	color: #fff;
 }
 .site-title small { color: rgba(255,255,255,0.85); font-weight: 400; }
+
+/* Logo / branding */
+.site-branding img { height: 44px; width: auto; max-width: 240px; display: block; }
+.site-header .site-branding { display: flex; align-items: center; gap: .75rem; }
 
 /* Navigation */
 .nav {
@@ -116,6 +131,7 @@ p { margin: 0 0 1rem 0; color: var(--dark-gray); }
 	transition: transform 120ms ease, box-shadow 120ms ease;
 }
 .btn:active { transform: translateY(1px); }
+.keyboard-focus { box-shadow: 0 0 0 4px rgba(226,114,34,0.12); }
 
 .btn-primary {
 	background: var(--accent);
@@ -159,6 +175,10 @@ input:focus, textarea:focus {
 	border-radius: 12px;
 }
 
+/* Certification logos placed under inspector profile */
+.cert-logos img { height: 36px; width: auto; object-fit: cover; border-radius: 6px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); }
+.cert-logos { display:flex; align-items:center; gap: .5rem; flex-wrap: wrap; }
+
 .muted { color: var(--muted); }
 .text-accent { color: var(--accent); }
 .text-gold { color: var(--gold); }
@@ -188,15 +208,44 @@ input:focus, textarea:focus {
 	h1 { font-size: 1.5rem; }
 	.grid { grid-template-columns: repeat(6, 1fr); }
 	.col-6 { grid-column: span 6; }
+	.site-header .container { padding: 0 1rem; }
+	.site-header .brand-and-toggle { justify-content: space-between; }
+	.nav-toggle { display:inline-flex; }
+	.nav { display: none; position: absolute; top: 64px; right: 1rem; background: rgba(59,39,27,0.95); padding: 0.5rem; border-radius: 6px; flex-direction: column; gap:0; width: auto; min-width: 140px; z-index: 40; }
+	.nav a { display:block; padding: 0.6rem 1rem; }
+	.nav.open { display:flex; }
+	.btn { width: auto; }
 }
 
 @media (max-width: 420px) {
-	.site-header .container { flex-direction: column; gap: 0.5rem; }
+		.site-header .container { flex-direction: column; gap: 0.5rem; align-items: stretch; }
+		.site-header .brand-and-toggle { width: 100%; }
+		.nav { right: 0; left: 0; border-radius: 0; }
+		.cert-logos { flex-wrap: wrap; gap: 0.5rem; }
+		.btn { width: 100%; }
+}
+
+/* Improve grid stacking on mobile */
+@media (max-width: 740px) {
+	.grid { grid-template-columns: 1fr; }
+	.col-6, .col-4, .col-12 { grid-column: span 1; }
+	.btn { width: 100%; }
+}
+
+/* Desktop header scale-up */
+@media (min-width: 1100px) {
+	.site-branding img { height: 72px; }
+	.site-title { font-size: 1.6rem; }
+	.hero { padding: 4rem 1.5rem; }
+	.hero h2 { font-size: 2.4rem; }
 }
 
 /* Accessibility improvements */
 a { color: var(--accent); }
 a:focus { outline: 3px dashed rgba(226,114,34,0.24); outline-offset: 2px; }
+.btn:focus, .nav-toggle:focus { outline: 3px solid rgba(243,169,23,0.18); outline-offset: 3px; }
+.skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { left: 0; top: 10px; width: auto; height: auto; padding: .5rem 1rem; background: var(--brown); color: #fff; z-index: 9999; border-radius: 4px; }
 
 /* Small helpers */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
